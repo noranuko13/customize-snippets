@@ -2,6 +2,7 @@ const gulp = require('gulp')
 const ts = require('gulp-typescript')
 const uglify = require('gulp-uglify')
 const tsProject = ts.createProject('tsconfig.json')
+const sass = require('gulp-sass')(require('sass'))
 
 function compileTs () {
   return tsProject.src()
@@ -10,4 +11,10 @@ function compileTs () {
     .pipe(gulp.dest('dist'))
 }
 
-gulp.task('default', compileTs)
+function compileScss () {
+  return gulp.src('src/**/*.scss')
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(gulp.dest('dist'))
+}
+
+gulp.task('default', gulp.parallel(compileTs, compileScss))
