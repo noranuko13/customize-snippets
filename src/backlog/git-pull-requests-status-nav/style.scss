@@ -1,0 +1,11 @@
+.cs-gprsn {
+  margin: 10px 0;
+
+  .status {
+    margin-right: 0.5em;
+
+    &.js-is-active {
+      box-shadow: rgb(255,180,96) 0 0 0 3px;
+    }
+  }
+}
