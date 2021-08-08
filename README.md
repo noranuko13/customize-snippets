@@ -1,6 +1,14 @@
 # customize-snippets
 
 
+## How to Use
+- JavaScriptとCSSが対象のページで読み込まれるようにします。
+  - 方法は何でも構いません。
+    - Redmineであればview customize pluginが有名です。
+    - Backlogには類似の機能がないので、ブラウザの拡張機能などを駆使して下さい。
+- [common/hello-world](src/common/hello-world)が動作確認用です。
+
+
 ## Links
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
   - [Gulp](https://www.typescriptlang.org/docs/handbook/gulp.html)
