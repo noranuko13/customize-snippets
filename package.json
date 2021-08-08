@@ -3,7 +3,8 @@
   "name": "customize-snippets",
   "version": "1.0.0",
   "scripts": {
-    "lint": "eslint src/**/*.ts"
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix"
   },
   "license": "MIT",
   "devDependencies": {
