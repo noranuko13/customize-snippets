@@ -1,0 +1,1 @@
+"use strict";{const a="Hello, World! Customize Snippets are now working!",b=()=>{const e=document.createElement("div");return e.setAttribute("id","csHw"),e.classList.add("cs-hw"),e.textContent=a,e},c=()=>{document.querySelector("body")?.append(b()),alert(a),console.log(a)};c()}
