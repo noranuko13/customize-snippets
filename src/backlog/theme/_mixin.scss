@@ -1,0 +1,22 @@
+@function getHex($color) {
+  @return red($color), green($color), blue($color);
+}
+
+@mixin theme($color) {
+  $accent: darken($color, 30%);
+  $base: lighten($color, 45%);
+  $base2: lighten($color, 40%);
+  $link: darken($color, 20%);
+  $sub1: desaturate($color, 35%);
+
+  body:not(.Page--error):not(.Page--add-space).theme-default {
+    --defaultColorMain: #{$color};
+    --defaultColorAccent: #{$accent};
+    --defaultColorAccent-rgb: #{getHex($accent)};
+    --defaultColorBase: #{$base};
+    --defaultColorBase-rgb: #{getHex($base)};
+    --defaultColorBase-2: #{$base2};
+    --defaultColorLink: #{$link};
+    --defaultColorSub-1: #{$sub1};
+  }
+}
