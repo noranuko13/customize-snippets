@@ -22,4 +22,4 @@ gulp.task('default', gulp.parallel(compileTs, compileScss))
 gulp.task('watch', function () {
   gulp.watch('src/**/*.ts', {}, gulp.series(compileTs))
   gulp.watch('src/**/*.scss', {}, gulp.series(compileScss))
-});
+})
