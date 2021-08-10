@@ -1,0 +1,10 @@
+.dashboard-contents {
+  &__left {
+    display: flex;
+    flex-flow: column;
+
+    .my-issues-section {
+      order: -1;
+    }
+  }
+}
