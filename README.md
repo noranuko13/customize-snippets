@@ -16,7 +16,7 @@
 - [ESLint](https://eslint.org/)
 - Chrome ウェブストア
   - [ScriptAutoRunner](https://chrome.google.com/webstore/detail/scriptautorunner/gpgjofmpmjjopcogjgdldidobhmjmdbm/related?hl=ja)
-  - [Stylish - ウェブサイト用カスタムテーマ](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=ja)
+  - [Stylus - Chrome ウェブストア](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
 - [Backlog](https://backlog.com/ja/)
 - [Redmine](https://www.redmine.org/)
   - [onozaty/redmine-view-customize](https://github.com/onozaty/redmine-view-customize)
