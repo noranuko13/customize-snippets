@@ -30,8 +30,8 @@ jobs:
           node-version: '14'
           cache: 'npm'
       - run: npm ci
-      - run: gulp
       - run: npm run lint
+      - run: gulp
       - uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
