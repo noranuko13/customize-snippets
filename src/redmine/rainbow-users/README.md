@@ -1,4 +1,4 @@
-# rainbow-users
+# redmine/rainbow-users
 
 - ユーザー名に背景色を付けて視認性を高める。
 
