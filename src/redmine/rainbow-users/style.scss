@@ -25,12 +25,12 @@ $colors: (
   #00a0de,  // 南港ポートタウン線 セルリアンブルー
 );
 
-a[href^="/users"] {
+a[href*="/users/"] {
   font-weight: bold;
   padding: .2em;
 }
 @for $index from 0 through length($colors) * 3 {
-  a[href="/users/#{$index}"] {
+  a[href$="/users/#{$index}"] {
     $color: nth($colors, $index % length($colors) + 1);
     background: rgba($color, .6);
   }
