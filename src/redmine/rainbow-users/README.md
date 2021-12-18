@@ -5,3 +5,4 @@
 ![Image](image.png)
 
 - https://noranuko13.github.io/customize-snippets/redmine/rainbow-users/style.css
+- https://noranuko13.github.io/customize-snippets/redmine/rainbow-users/style-over100.css
