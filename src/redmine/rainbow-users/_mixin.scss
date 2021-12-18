@@ -1,0 +1,17 @@
+@import "variables";
+
+@mixin base() {
+  a[href*="/users/"] {
+    font-weight: bold;
+    padding: .2em;
+  }
+}
+
+@mixin invoke($unit) {
+  @for $index from 0 through length($colors) * $unit {
+    a[href$="/users/#{$index}"] {
+      $color: nth($colors, $index % length($colors) + 1);
+      background: rgba($color, .6);
+    }
+  }
+}
