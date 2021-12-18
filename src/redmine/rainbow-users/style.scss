@@ -33,6 +33,5 @@ a[href^="/users"] {
   a[href="/users/#{$index}"] {
     $color: nth($colors, $index % length($colors) + 1);
     background: rgba($color, .6);
-    padding: .2em;
   }
 }
