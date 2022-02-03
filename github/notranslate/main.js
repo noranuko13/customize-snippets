@@ -1,0 +1,1 @@
+"use strict";{const a=()=>{document.querySelectorAll(".highlight pre").forEach(t=>{t.classList?.add("notranslate")})};a()}
