@@ -5,7 +5,7 @@ const tsProject = ts.createProject('tsconfig.json')
 const sass = require('gulp-sass')(require('sass'))
 
 function compileTs () {
-  return tsProject.src()
+  return gulp.src('src/**/*.ts')
     .pipe(tsProject())
     .pipe(uglify())
     .pipe(gulp.dest('dist'))
