@@ -17,9 +17,15 @@ function compileScss () {
     .pipe(gulp.dest('dist'))
 }
 
-gulp.task('default', gulp.parallel(compileTs, compileScss))
+function copyImage () {
+  return gulp.src('src/**/*.png')
+    .pipe(gulp.dest('dist'))
+}
+
+gulp.task('default', gulp.parallel(compileTs, compileScss, copyImage))
 
 gulp.task('watch', function () {
   gulp.watch('src/**/*.ts', {}, gulp.series(compileTs))
   gulp.watch('src/**/*.scss', {}, gulp.series(compileScss))
+  gulp.watch('src/**/*.png', {}, gulp.series(copyImage))
 })
