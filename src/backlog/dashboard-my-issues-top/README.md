@@ -4,4 +4,4 @@
 
 ![Image](image.png)
 
-- https://noranuko13.github.io/customize-snippets/backlog/dashboard-my-issues-top/style.css
+- <https://noranuko13.github.io/customize-snippets/backlog/dashboard-my-issues-top/style.css>

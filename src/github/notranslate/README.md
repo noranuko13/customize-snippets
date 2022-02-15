@@ -17,4 +17,4 @@ Di notte tutti gatti sono grigi.
 Di notte tutti gatti sono grigi.
 ```
 
-- https://noranuko13.github.io/customize-snippets/github/notranslate/main.js
+- <https://noranuko13.github.io/customize-snippets/github/notranslate/main.js>

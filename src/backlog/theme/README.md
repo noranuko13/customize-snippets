@@ -10,11 +10,11 @@
 
 ![Image](images/fuji.png)
 
-- https://noranuko13.github.io/customize-snippets/backlog/theme/fuji.css
+- <https://noranuko13.github.io/customize-snippets/backlog/theme/fuji.css>
 
 
 ## Kogane - 黄金
 
 ![Image](images/kogane.png)
 
-- https://noranuko13.github.io/customize-snippets/backlog/theme/kogane.css
+- <https://noranuko13.github.io/customize-snippets/backlog/theme/kogane.css>

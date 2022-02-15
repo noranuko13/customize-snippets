@@ -4,4 +4,4 @@
 
 ![Image](image.png)
 
-- https://noranuko13.github.io/customize-snippets/redmine/closed-issue-none/style.css
+- <https://noranuko13.github.io/customize-snippets/redmine/closed-issue-none/style.css>
