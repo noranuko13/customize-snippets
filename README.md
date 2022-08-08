@@ -14,6 +14,7 @@
   - [Gulp](https://www.typescriptlang.org/docs/handbook/gulp.html)
 - [gulp.js](https://gulpjs.com/)
   - [johno/gulp-remarkable](https://github.com/johno/gulp-remarkable)
+  - [tarunc/gulp-jsbeautifier](https://github.com/tarunc/gulp-jsbeautifier)
 - [ESLint](https://eslint.org/)
 - Chrome ウェブストア
   - [ScriptAutoRunner](https://chrome.google.com/webstore/detail/scriptautorunner/gpgjofmpmjjopcogjgdldidobhmjmdbm/related?hl=ja)

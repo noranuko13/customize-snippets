@@ -4,6 +4,7 @@ const uglify = require('gulp-uglify')
 const tsProject = ts.createProject('tsconfig.json')
 const sass = require('gulp-sass')(require('sass'))
 const md = require('gulp-remarkable')
+const beautify = require('gulp-jsbeautifier')
 
 function compileTs () {
   return gulp.src('src/**/*.ts')
@@ -26,6 +27,10 @@ function copyImage () {
 function md2Html () {
   return gulp.src('src/**/*.md')
     .pipe(md())
+    .pipe(beautify({
+      indent_size: 2,
+      end_with_newline: true
+    }))
     .pipe(gulp.dest('dist'))
 }
 
