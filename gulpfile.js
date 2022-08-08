@@ -3,6 +3,7 @@ const ts = require('gulp-typescript')
 const uglify = require('gulp-uglify')
 const tsProject = ts.createProject('tsconfig.json')
 const sass = require('gulp-sass')(require('sass'))
+const md = require('gulp-remarkable')
 
 function compileTs () {
   return gulp.src('src/**/*.ts')
@@ -22,10 +23,17 @@ function copyImage () {
     .pipe(gulp.dest('dist'))
 }
 
-gulp.task('default', gulp.parallel(compileTs, compileScss, copyImage))
+function md2Html () {
+  return gulp.src('src/**/*.md')
+    .pipe(md())
+    .pipe(gulp.dest('dist'))
+}
+
+gulp.task('default', gulp.parallel(compileTs, compileScss, copyImage, md2Html))
 
 gulp.task('watch', function () {
   gulp.watch('src/**/*.ts', {}, gulp.series(compileTs))
   gulp.watch('src/**/*.scss', {}, gulp.series(compileScss))
   gulp.watch('src/**/*.png', {}, gulp.series(copyImage))
+  gulp.watch('src/**/*.md', {}, gulp.series(md2Html))
 })
