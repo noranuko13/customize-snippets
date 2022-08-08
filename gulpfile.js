@@ -5,6 +5,7 @@ const tsProject = ts.createProject('tsconfig.json')
 const sass = require('gulp-sass')(require('sass'))
 const md = require('gulp-remarkable')
 const beautify = require('gulp-jsbeautifier')
+const rename = require('gulp-rename')
 
 function compileTs () {
   return gulp.src('src/**/*.ts')
@@ -27,6 +28,9 @@ function copyImage () {
 function md2Html () {
   return gulp.src('src/**/*.md')
     .pipe(md())
+    .pipe(rename(function (path) {
+      path.basename = 'index'
+    }))
     .pipe(beautify({
       indent_size: 2,
       end_with_newline: true
