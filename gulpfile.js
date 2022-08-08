@@ -6,6 +6,7 @@ const sass = require('gulp-sass')(require('sass'))
 const md = require('gulp-remarkable')
 const beautify = require('gulp-jsbeautifier')
 const rename = require('gulp-rename')
+const swig = require('gulp-swig')
 
 function compileTs () {
   return gulp.src('src/**/*.ts')
@@ -30,7 +31,9 @@ function md2Html () {
     .pipe(md())
     .pipe(rename(function (path) {
       path.basename = 'index'
+      path.extname = '.twig'
     }))
+    .pipe(swig({ defaults: { cache: false } }))
     .pipe(beautify({
       indent_size: 2,
       end_with_newline: true

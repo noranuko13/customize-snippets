@@ -16,6 +16,7 @@
   - [johno/gulp-remarkable](https://github.com/johno/gulp-remarkable)
   - [tarunc/gulp-jsbeautifier](https://github.com/tarunc/gulp-jsbeautifier)
   - [hparra/gulp-rename](https://github.com/hparra/gulp-rename)
+  - [colynb/gulp-swig](https://github.com/colynb/gulp-swig)
 - [ESLint](https://eslint.org/)
 - Chrome ウェブストア
   - [ScriptAutoRunner](https://chrome.google.com/webstore/detail/scriptautorunner/gpgjofmpmjjopcogjgdldidobhmjmdbm/related?hl=ja)
