@@ -8,13 +8,13 @@
 
 ## Fuji - 藤
 
-![Image](images/fuji.png)
+![Image](https://noranuko13.github.io/customize-snippets/backlog/theme/images/fuji.png)
 
 - <https://noranuko13.github.io/customize-snippets/backlog/theme/fuji.css>
 
 
 ## Kogane - 黄金
 
-![Image](images/kogane.png)
+![Image](https://noranuko13.github.io/customize-snippets/backlog/theme/images/kogane.png)
 
 - <https://noranuko13.github.io/customize-snippets/backlog/theme/kogane.css>
