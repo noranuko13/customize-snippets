@@ -41,6 +41,7 @@ function md2Html () {
     .pipe(footer('{%- endblock -%}\n'))
     .pipe(data(function (file) {
       return {
+        sitename: 'Customize Snippets',
         basepath: 'https://noranuko13.github.io/customize-snippets/',
         ...require(path.dirname(file.path) + '/ogp.json')
       }

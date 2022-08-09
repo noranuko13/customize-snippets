@@ -1,3 +1,4 @@
 {
-  "key": "common/hello-world"
+  "key": "common/hello-world",
+  "description": "Customize Snippetsの動作確認用CSS,JavaScript"
 }

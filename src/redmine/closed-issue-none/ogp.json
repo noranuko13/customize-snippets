@@ -1,3 +1,4 @@
 {
-  "key": "redmine/closed-issue-none"
+  "key": "redmine/closed-issue-none",
+  "description": "終了したチケットを非表示にする"
 }

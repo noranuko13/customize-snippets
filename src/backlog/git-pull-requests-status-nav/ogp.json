@@ -1,3 +1,4 @@
 {
-  "key": "backlog/git-pull-requests-status-nav"
+  "key": "backlog/git-pull-requests-status-nav",
+  "description": "プルリクの状態をショートカットとして提供する"
 }

@@ -1,3 +1,4 @@
 {
-  "key": "redmine/closed-issue-thin"
+  "key": "redmine/closed-issue-thin",
+  "description": "終了したチケットの存在感をなくす"
 }

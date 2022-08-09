@@ -1,3 +1,4 @@
 {
-  "key": "redmine/rainbow-users"
+  "key": "redmine/rainbow-users",
+  "description": "ユーザー名に背景色を付けて視認性を高める"
 }
