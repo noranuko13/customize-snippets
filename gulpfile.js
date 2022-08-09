@@ -9,6 +9,8 @@ const rename = require('gulp-rename')
 const swig = require('gulp-swig')
 const header = require('gulp-header')
 const footer = require('gulp-footer')
+const data = require('gulp-data')
+const path = require('path')
 
 function compileTs () {
   return gulp.src('src/**/*.ts')
@@ -37,6 +39,12 @@ function md2Html () {
     }))
     .pipe(header('{%- extends "../../../templates/page.twig" -%}\n{%- block content -%}\n'))
     .pipe(footer('{%- endblock -%}\n'))
+    .pipe(data(function (file) {
+      return {
+        basepath: 'https://noranuko13.github.io/customize-snippets/',
+        ...require(path.dirname(file.path) + '/ogp.json')
+      }
+    }))
     .pipe(swig({ defaults: { cache: false } }))
     .pipe(beautify({
       indent_size: 2,
