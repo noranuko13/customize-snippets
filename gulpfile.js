@@ -7,6 +7,8 @@ const md = require('gulp-remarkable')
 const beautify = require('gulp-jsbeautifier')
 const rename = require('gulp-rename')
 const swig = require('gulp-swig')
+const header = require('gulp-header')
+const footer = require('gulp-footer')
 
 function compileTs () {
   return gulp.src('src/**/*.ts')
@@ -33,10 +35,15 @@ function md2Html () {
       path.basename = 'index'
       path.extname = '.twig'
     }))
+    .pipe(header('{%- extends "../../../templates/page.twig" -%}\n{%- block content -%}\n'))
+    .pipe(footer('{%- endblock -%}\n'))
     .pipe(swig({ defaults: { cache: false } }))
     .pipe(beautify({
       indent_size: 2,
-      end_with_newline: true
+      end_with_newline: true,
+      html: {
+        extra_liners: []
+      }
     }))
     .pipe(gulp.dest('dist'))
 }
