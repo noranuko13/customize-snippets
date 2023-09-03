@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "lint": "eslint src/**/*.ts",
-    "lint:fix": "eslint src/**/*.ts --fix"
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "build": "gulp"
   },
   "license": "MIT",
   "devDependencies": {
