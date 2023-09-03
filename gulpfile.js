@@ -11,6 +11,8 @@ const header = require('gulp-header')
 const footer = require('gulp-footer')
 const data = require('gulp-data')
 const path = require('path')
+const glob = require('glob')
+const fs = require('fs')
 
 function compileTs () {
   return gulp.src('src/**/*.ts')
@@ -31,18 +33,23 @@ function copyImage () {
 }
 
 function md2Html () {
+  const pages = []
+  glob.sync('src/**/*.json').forEach(json => {
+    pages.push(JSON.parse(fs.readFileSync(json, 'utf8')))
+  })
   return gulp.src('src/**/*.md')
     .pipe(md())
     .pipe(rename(function (path) {
       path.basename = 'index'
       path.extname = '.twig'
     }))
-    .pipe(header('{%- extends "../../../templates/page.twig" -%}\n{%- block content -%}\n'))
+    .pipe(header(`{%- extends "${path.join(__dirname, '/templates/page.twig')}" -%}{%- block content -%}`))
     .pipe(footer('{%- endblock -%}\n'))
     .pipe(data(function (file) {
       return {
         sitename: 'Customize Snippets',
         basepath: 'https://noranuko13.github.io/customize-snippets/',
+        pages,
         ...require(path.dirname(file.path) + '/ogp.json')
       }
     }))

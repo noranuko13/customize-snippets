@@ -14,5 +14,11 @@
 </head>
 <body>
 {%- block content -%}{%- endblock -%}
+<hr>
+<ul>
+  {%- for page in pages -%}
+    <li><small><a href="{{ basepath }}{{ page.key }}/">{{ page.key }}</a>: {{ page.description }}</small></li>
+  {%- endfor -%}
+</ul>
 </body>
 </html>
