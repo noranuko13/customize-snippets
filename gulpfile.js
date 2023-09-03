@@ -70,5 +70,5 @@ gulp.task('watch', function () {
   gulp.watch('src/**/*.ts', {}, gulp.series(compileTs))
   gulp.watch('src/**/*.scss', {}, gulp.series(compileScss))
   gulp.watch('src/**/*.png', {}, gulp.series(copyImage))
-  gulp.watch('src/**/*.md', {}, gulp.series(md2Html))
+  gulp.watch(['src/**/*.md', 'templates/**/*.twig'], {}, gulp.series(md2Html))
 })
