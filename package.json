@@ -3,6 +3,7 @@
   "name": "customize-snippets",
   "version": "1.0.0",
   "scripts": {
+    "serve": "gulp watch",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "build": "gulp"
