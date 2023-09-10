@@ -8,7 +8,7 @@
   type StatusKey = keyof typeof Status
   type StatusValue = typeof Status[StatusKey]
 
-  function getHref (value: StatusValue): string {
+  const getHref = (value: StatusValue): string => {
     const url = new URL(window.location.href)
 
     if (value === Status.All) {
