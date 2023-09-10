@@ -1,21 +1,21 @@
-import gulp from "gulp";
-import uglify from "gulp-uglify";
-import sass from "sass";
-import gulp_sass from "gulp-sass";
-const gulpSass = gulp_sass(sass);
-import md from "gulp-remarkable";
-import beautify from "gulp-jsbeautifier";
-import rename from "gulp-rename";
-import swig from "gulp-swig";
-import header from "gulp-header";
-import footer from "gulp-footer";
-import data from "gulp-data";
-import path from "path";
-import { glob } from "glob";
-import fs from "fs";
-import tap from "gulp-tap";
 import browserify from "browserify";
+import fs from "fs";
+import { glob } from "glob";
+import gulp from "gulp";
+import data from "gulp-data";
+import footer from "gulp-footer";
+import header from "gulp-header";
+import beautify from "gulp-jsbeautifier";
+import md from "gulp-remarkable";
+import rename from "gulp-rename";
+import gulp_sass from "gulp-sass";
+import swig from "gulp-swig";
+import tap from "gulp-tap";
+import uglify from "gulp-uglify";
+import path from "path";
+import sass from "sass";
 import buffer from "vinyl-buffer";
+const gulpSass = gulp_sass(sass);
 
 function compileTs() {
   return gulp
