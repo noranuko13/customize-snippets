@@ -1,18 +1,20 @@
-const gulp = require("gulp");
-const ts = require("gulp-typescript");
-const uglify = require("gulp-uglify");
+import gulp from "gulp";
+import ts from "gulp-typescript";
+import uglify from "gulp-uglify";
 const tsProject = ts.createProject("tsconfig.json");
-const sass = require("gulp-sass")(require("sass"));
-const md = require("gulp-remarkable");
-const beautify = require("gulp-jsbeautifier");
-const rename = require("gulp-rename");
-const swig = require("gulp-swig");
-const header = require("gulp-header");
-const footer = require("gulp-footer");
-const data = require("gulp-data");
-const path = require("path");
-const glob = require("glob");
-const fs = require("fs");
+import sass from "sass";
+import gulp_sass from "gulp-sass";
+const gulpSass = gulp_sass(sass);
+import md from "gulp-remarkable";
+import beautify from "gulp-jsbeautifier";
+import rename from "gulp-rename";
+import swig from "gulp-swig";
+import header from "gulp-header";
+import footer from "gulp-footer";
+import data from "gulp-data";
+import path from "path";
+import { glob } from "glob";
+import fs from "fs";
 
 function compileTs() {
   return gulp
@@ -25,7 +27,9 @@ function compileTs() {
 function compileScss() {
   return gulp
     .src("src/**/*.scss")
-    .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+    .pipe(
+      gulpSass({ outputStyle: "compressed" }).on("error", gulpSass.logError),
+    )
     .pipe(gulp.dest("dist"));
 }
 
@@ -34,9 +38,9 @@ function copyImage() {
 }
 
 function md2Html() {
-  const pages = [];
-  glob.sync("src/**/*.json").forEach((json) => {
-    pages.push(JSON.parse(fs.readFileSync(json, "utf8")));
+  const pages: { key: string; description: string }[] = [];
+  glob.sync("src/**/*.json").forEach((path: string) => {
+    pages.push(JSON.parse(fs.readFileSync(path, "utf8")));
   });
   return gulp
     .src("src/**/*.md")
@@ -57,7 +61,7 @@ function md2Html() {
     )
     .pipe(footer("{%- endblock -%}\n"))
     .pipe(
-      data(function (file) {
+      data(function (file: { path: string }) {
         return {
           sitename: "Customize Snippets",
           basepath: "https://noranuko13.github.io/customize-snippets/",

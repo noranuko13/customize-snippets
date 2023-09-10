@@ -4,12 +4,20 @@
   "version": "1.0.0",
   "scripts": {
     "serve": "gulp watch",
-    "lint": "eslint src/**/*.ts && stylelint **/*.scss && prettier . --check",
-    "lint:fix": "eslint src/**/*.ts --fix && stylelint **/*.scss --fix && prettier . --write",
+    "lint": "eslint **/*.ts && stylelint **/*.scss && prettier . --check",
+    "lint:fix": "eslint **/*.ts --fix && stylelint **/*.scss --fix && prettier . --write",
     "build": "gulp"
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/gulp": "^4.0.13",
+    "@types/gulp-header": "^2.0.2",
+    "@types/gulp-rename": "^2.0.2",
+    "@types/gulp-sass": "^5.0.1",
+    "@types/gulp-tap": "^1.0.2",
+    "@types/gulp-uglify": "^3.0.8",
+    "@types/node": "^20.6.0",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
     "eslint": "^8.48.0",
@@ -34,6 +42,8 @@
     "stylelint-config-standard": "^34.0.0",
     "stylelint-config-standard-scss": "^11.0.0",
     "stylelint-prettier": "^4.0.2",
+    "ts-node": "^10.9.1",
+    "tsify": "^5.0.4",
     "typescript": "^5.2.2"
   },
   "engines": {
