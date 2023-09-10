@@ -1,5 +1,13 @@
 import gulp from "gulp";
 
 export function png2thumb() {
-  return gulp.src("src/**/*.png").pipe(gulp.dest("dist"));
+  return _png2thumb("src/**/*.png");
+}
+
+export function png2thumbW(filename: string) {
+  return _png2thumb(filename);
+}
+
+export function _png2thumb(filename: string) {
+  return gulp.src(filename, { base: "./src" }).pipe(gulp.dest("dist"));
 }

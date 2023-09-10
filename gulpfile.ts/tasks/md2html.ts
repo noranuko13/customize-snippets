@@ -11,12 +11,20 @@ import swig from "gulp-swig";
 import path from "path";
 
 export function md2html() {
+  return _md2html("src/**/*.md");
+}
+
+export function md2htmlW(filename: string) {
+  return _md2html(filename);
+}
+
+export function _md2html(filename: string) {
   const pages: { key: string; description: string }[] = [];
   glob.sync("src/**/*.json").forEach((path: string) => {
     pages.push(JSON.parse(fs.readFileSync(path, "utf8")));
   });
   return gulp
-    .src("src/**/*.md")
+    .src(filename, { base: "./src" })
     .pipe(md())
     .pipe(
       rename(function (path) {
