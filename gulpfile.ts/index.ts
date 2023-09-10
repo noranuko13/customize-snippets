@@ -63,7 +63,7 @@ function md2Html() {
     .pipe(
       header(
         `{%- extends "${path.join(
-          __dirname,
+          path.resolve(__dirname, "../"),
           "/templates/page.twig",
         )}" -%}{%- block content -%}`,
       ),
