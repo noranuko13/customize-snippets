@@ -4,7 +4,7 @@
 @mixin base() {
   a[href*="/users/"] {
     font-weight: bold;
-    padding: .2em;
+    padding: 0.2em;
   }
 }
 
@@ -13,7 +13,7 @@
     a[href$="/users/#{$index}"] {
       $color: list.nth($colors, $index % list.length($colors) + 1);
 
-      background: rgba($color, .6);
+      background: rgba($color, 0.6);
     }
   }
 }
