@@ -1,7 +1,5 @@
 import gulp from "gulp";
-import ts from "gulp-typescript";
 import uglify from "gulp-uglify";
-const tsProject = ts.createProject("tsconfig.json");
 import sass from "sass";
 import gulp_sass from "gulp-sass";
 const gulpSass = gulp_sass(sass);
@@ -15,11 +13,22 @@ import data from "gulp-data";
 import path from "path";
 import { glob } from "glob";
 import fs from "fs";
+import tap from "gulp-tap";
+import browserify from "browserify";
+import buffer from "vinyl-buffer";
 
 function compileTs() {
   return gulp
-    .src("src/**/*.ts")
-    .pipe(tsProject())
+    .src("src/**/main.ts", { read: false })
+    .pipe(
+      tap((file) => {
+        file.contents = browserify(file.path, { debug: true })
+          .plugin("tsify")
+          .bundle();
+        file.extname = ".js";
+      }),
+    )
+    .pipe(buffer())
     .pipe(uglify())
     .pipe(gulp.dest("dist"));
 }
