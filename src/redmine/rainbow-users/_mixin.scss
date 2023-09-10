@@ -1,3 +1,4 @@
+@use "sass:list";
 @import "variables";
 
 @mixin base() {
@@ -10,7 +11,8 @@
 @mixin invoke($unit) {
   @for $index from 0 through length($colors) * $unit {
     a[href$="/users/#{$index}"] {
-      $color: nth($colors, $index % length($colors) + 1);
+      $color: list.nth($colors, $index % list.length($colors) + 1);
+
       background: rgba($color, .6);
     }
   }
