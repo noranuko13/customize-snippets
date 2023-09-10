@@ -6,7 +6,7 @@
     "watch": "gulp watch",
     "lint": "eslint **/*.ts && stylelint **/*.scss && prettier . --check",
     "lint:fix": "eslint **/*.ts --fix && stylelint **/*.scss --fix && prettier . --write",
-    "build": "gulp"
+    "build": "gulp build"
   },
   "license": "MIT",
   "devDependencies": {
