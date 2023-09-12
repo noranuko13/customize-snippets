@@ -1,0 +1,4 @@
+{
+  "key": "redmine/n-weeks-before-due-date",
+  "description": "期日からN週間前を逆算する"
+}

@@ -1,4 +1,4 @@
-import { IntAttr, TrackerAttr } from "./attrs";
+import { DueDateAttr, IntAttr, TrackerAttr } from "./attrs";
 
 export class Property {
   static boxInner() {
@@ -19,6 +19,17 @@ export class Property {
       throw new ReferenceError();
     }
     return new TrackerAttr(p);
+  }
+
+  static dueDate(): DueDateAttr {
+    const p = this.boxInner().querySelector<HTMLParagraphElement>(
+      "p:has(#issue_due_date)",
+    );
+    if (!p) {
+      console.error("段落要素が取得できませんでした", this.boxInner());
+      throw new ReferenceError();
+    }
+    return new DueDateAttr(p);
   }
 
   static intCustomFields(): IntAttr[] {
