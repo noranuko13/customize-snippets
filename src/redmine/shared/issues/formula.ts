@@ -15,9 +15,7 @@ export class Formula {
   }
 
   execute() {
-    const numbers = this.factors().map((factor) =>
-      Number(factor.input().value),
-    );
+    const numbers = this.factors().map((factor) => Number(factor.input().value));
     this.result().input().value = this.option.calc(numbers).toString();
     animate(this.targets().map((target) => target.p));
   }
@@ -33,10 +31,7 @@ export class Formula {
     const re = new RegExp(`［${this.option.nameKey}］$`);
     const intAttrs = this.intAttrs.filter((intAttr) => re.test(intAttr.name()));
     if (intAttrs.length !== 1) {
-      console.error(
-        `［${this.option.nameKey}］が複数設定されています`,
-        intAttrs,
-      );
+      console.error(`［${this.option.nameKey}］が複数設定されています`, intAttrs);
       throw new ReferenceError();
     }
     return intAttrs[0];

@@ -45,13 +45,7 @@ export class Md2htmlTask extends Task {
             sitename: "Customize Snippets",
             basepath: "https://noranuko13.github.io/customize-snippets/",
             pages,
-            ...require(
-              path.join(
-                path.resolve(__dirname, "../../"),
-                path.dirname(file.path),
-                "/ogp.json",
-              ),
-            ),
+            ...require(path.join(path.resolve(__dirname, "../../"), path.dirname(file.path), "/ogp.json")),
           };
         }),
       )

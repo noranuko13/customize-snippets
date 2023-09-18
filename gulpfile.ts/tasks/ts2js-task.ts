@@ -16,9 +16,7 @@ export class Ts2jsTask extends Task {
       .src(this.suppose(globs), { base: "./src", read: false })
       .pipe(
         tap((file) => {
-          file.contents = browserify(file.path, { debug: true })
-            .plugin("tsify")
-            .bundle();
+          file.contents = browserify(file.path, { debug: true }).plugin("tsify").bundle();
           file.extname = ".js";
         }),
       )
@@ -28,9 +26,7 @@ export class Ts2jsTask extends Task {
   }
 
   private suppose(globs: string): string {
-    const supposed: string = globs.includes("shared")
-      ? "src/**/main.ts"
-      : path.join(path.dirname(globs), "main.ts");
+    const supposed: string = globs.includes("shared") ? "src/**/main.ts" : path.join(path.dirname(globs), "main.ts");
     log(`supposed: ${supposed}`);
     return supposed;
   }

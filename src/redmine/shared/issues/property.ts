@@ -11,9 +11,7 @@ export class Property {
   }
 
   static tracker(): TrackerAttr {
-    const p = this.boxInner().querySelector<HTMLParagraphElement>(
-      "p:has(#issue_tracker_id)",
-    );
+    const p = this.boxInner().querySelector<HTMLParagraphElement>("p:has(#issue_tracker_id)");
     if (!p) {
       console.error("段落要素が取得できませんでした", this.boxInner());
       throw new ReferenceError();
@@ -22,9 +20,7 @@ export class Property {
   }
 
   static dueDate(): DueDateAttr {
-    const p = this.boxInner().querySelector<HTMLParagraphElement>(
-      "p:has(#issue_due_date)",
-    );
+    const p = this.boxInner().querySelector<HTMLParagraphElement>("p:has(#issue_due_date)");
     if (!p) {
       console.error("段落要素が取得できませんでした", this.boxInner());
       throw new ReferenceError();
@@ -33,8 +29,8 @@ export class Property {
   }
 
   static intCustomFields(): IntAttr[] {
-    return Array.from(
-      this.boxInner().querySelectorAll<HTMLParagraphElement>("p:has(.int_cf)"),
-    ).map((customField) => new IntAttr(customField));
+    return Array.from(this.boxInner().querySelectorAll<HTMLParagraphElement>("p:has(.int_cf)")).map(
+      (customField) => new IntAttr(customField),
+    );
   }
 }

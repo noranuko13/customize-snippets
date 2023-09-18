@@ -27,7 +27,6 @@ export const distLog = (message: string) => {
 };
 
 const stdout = (prefix: string, message: string) => {
-  const time =
-    "\x1b[1m\x1b[90m" + `[${new Date().toLocaleTimeString()}]` + RESET;
+  const time = "\x1b[1m\x1b[90m" + `[${new Date().toLocaleTimeString()}]` + RESET;
   return console.log([time, prefix, message].join(" "));
 };

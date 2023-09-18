@@ -6,12 +6,7 @@ import { Scss2cssTask } from "./tasks/scss2css-task";
 import { Task } from "./tasks/task";
 import { Ts2jsTask } from "./tasks/ts2js-task";
 
-const tasks: Task[] = [
-  new Ts2jsTask(),
-  new Scss2cssTask(),
-  new Png2thumbTask(),
-  new Md2htmlTask(),
-];
+const tasks: Task[] = [new Ts2jsTask(), new Scss2cssTask(), new Png2thumbTask(), new Md2htmlTask()];
 
 gulp.task("build", (cb) => {
   tasks.forEach((task) => task.convert());

@@ -12,9 +12,7 @@ export class Scss2cssTask extends Task {
     log(`globs: ${globs}`);
     return gulp
       .src(globs, { base: "./src" })
-      .pipe(
-        gulpSass({ outputStyle: "compressed" }).on("error", gulpSass.logError),
-      )
+      .pipe(gulpSass({ outputStyle: "compressed" }).on("error", gulpSass.logError))
       .pipe(gulp.dest("dist"));
   }
 }
