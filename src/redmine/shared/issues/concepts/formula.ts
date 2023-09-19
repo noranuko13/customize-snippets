@@ -1,8 +1,8 @@
-import { flashBg } from "../animates";
-import { sanitizeWithOne } from "../sanitizers";
-import { IntAttr } from "./attrs";
+import { flashBg } from "../../animates";
+import { sanitizeWithOne } from "../../sanitizers";
+import { IntAttr } from "../attrs";
+import { Property } from "../property";
 import { FormulaOption } from "./formula-option";
-import { Property } from "./property";
 
 export class Formula {
   private readonly option: FormulaOption;

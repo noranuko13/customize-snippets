@@ -1,4 +1,3 @@
 export { Attr, IntAttr, TrackerAttr } from "./attrs";
-export { Formula } from "./formula";
-export { FormulaOption } from "./formula-option";
+export { Formula, FormulaOption } from "./concepts";
 export { Property } from "./property";
