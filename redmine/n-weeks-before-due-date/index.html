@@ -2,13 +2,13 @@
 <html lang="ja">
 <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#">
   <meta charset="utf-8">
-  <title>backlog/dashboard-my-issues-top - Customize Snippets</title>
-  <meta property="og:title" content="backlog/dashboard-my-issues-top" />
+  <title>redmine/n-weeks-before-due-date - Customize Snippets</title>
+  <meta property="og:title" content="redmine/n-weeks-before-due-date" />
   <meta property="og:type" content="artcle" />
-  <meta property="og:url" content="https://noranuko13.github.io/customize-snippets/backlog/dashboard-my-issues-top/" />
-  <meta property="og:image" content="https://noranuko13.github.io/customize-snippets/backlog/dashboard-my-issues-top/image.png" />
+  <meta property="og:url" content="https://noranuko13.github.io/customize-snippets/redmine/n-weeks-before-due-date/" />
+  <meta property="og:image" content="https://noranuko13.github.io/customize-snippets/redmine/n-weeks-before-due-date/image.png" />
   <meta property="og:site_name" content="Customize Snippets" />
-  <meta property="og:description" content="ダッシュボード『自分の課題』を一番上に表示する" />
+  <meta property="og:description" content="期日からN週間前を逆算する" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@noranyanko13">
   <style>
@@ -20,13 +20,48 @@
   </style>
 </head>
 <body>
-  <h1>backlog/dashboard-my-issues-top</h1>
+  <h1>redmine/n-weeks-before-due-date</h1>
   <ul>
-    <li>『自分の課題』を一番上に表示する。</li>
+    <li>期日からN週間前を逆算する。</li>
   </ul>
-  <p><img src="https://noranuko13.github.io/customize-snippets/backlog/dashboard-my-issues-top/image.png" alt="Image"></p>
+  <p><img src="https://noranuko13.github.io/customize-snippets/redmine/n-weeks-before-due-date/image.png" alt="Image"></p>
   <ul>
-    <li><a href="https://noranuko13.github.io/customize-snippets/backlog/dashboard-my-issues-top/style.css">https://noranuko13.github.io/customize-snippets/backlog/dashboard-my-issues-top/style.css</a></li>
+    <li>
+      <p><a href="https://noranuko13.github.io/customize-snippets/redmine/n-weeks-before-due-date/main.js?week=-2&amp;textKey=merge">https://noranuko13.github.io/customize-snippets/redmine/n-weeks-before-due-date/main.js?week=-2&amp;textKey=merge</a></p>
+    </li>
+    <li>
+      <p>week: 週数</p>
+      <ul>
+        <li>例えば -2 で2週間前、-3 で3週間前。</li>
+      </ul>
+    </li>
+    <li>
+      <p>textKey: テキストキー</p>
+      <ul>
+        <li>staging: ステージング目安</li>
+        <li>merge: マージ期限</li>
+        <li>week: N週間前</li>
+      </ul>
+    </li>
+    <li>
+      <p>Redmineの期日がステータスを終了にする日付なので、</p>
+      <ul>
+        <li>これを本番リリース日とすると、『ステージング環境に反映する日』『メインブランチのマージ期限日』を
+          逆算して対応する形になるので、開始日とは別に目安表示が欲しくなって作成。</li>
+      </ul>
+    </li>
+    <li>
+      <p>べき論でいえばチケットの期限＝終了日が望ましいのは百も承知だが、</p>
+      <ul>
+        <li>現実的な話、機能追加や仕様変更のチケットが終了になるのって、本番リリース後になることが多い。</li>
+      </ul>
+    </li>
+    <li>
+      <p>原理的には『N週間後』も表示できるが、使い道も保守するかどうかも不明。</p>
+    </li>
+    <li>
+      <p>任意のテキストを入力可とすると修正が大変なので、固定の文言を追加していく方向で。</p>
+    </li>
   </ul>
   <hr>
   <ul>
