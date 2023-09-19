@@ -2,12 +2,7 @@ export class ScriptQuery {
   params: URLSearchParams;
 
   constructor() {
-    const currentScript = document.currentScript;
-    if (!currentScript) {
-      console.error("scriptタグが取得できませんでした");
-      throw new ReferenceError();
-    }
-    const src = (currentScript as HTMLScriptElement).src;
+    const src = (document.currentScript as HTMLScriptElement).src;
     this.params = new URLSearchParams(new URL(src).search);
   }
 

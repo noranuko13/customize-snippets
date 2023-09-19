@@ -21,11 +21,6 @@ export class IntAttr implements Attr {
   }
 
   input(): HTMLInputElement {
-    const input = this.p.querySelector<HTMLInputElement>("input");
-    if (!input) {
-      console.error("インプット要素が取得できませんでした", this.p);
-      throw new ReferenceError();
-    }
-    return input;
+    return this.p.querySelector<HTMLInputElement>("input")!;
   }
 }

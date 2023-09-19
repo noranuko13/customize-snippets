@@ -8,11 +8,6 @@ export class TrackerAttr implements Attr {
   }
 
   select(): HTMLSelectElement {
-    const select = this.p.querySelector<HTMLSelectElement>("select");
-    if (!select) {
-      console.error("セレクト要素が取得できませんでした", this.p);
-      throw new ReferenceError();
-    }
-    return select;
+    return this.p.querySelector<HTMLSelectElement>("select")!;
   }
 }
