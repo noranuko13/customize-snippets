@@ -13,7 +13,7 @@ import { Formula, FormulaOption, Property } from "../shared/issues";
   new Formula(option).execute();
 
   // 変更検知
-  Property.boxInner().addEventListener("change", (event) => {
+  new Property().div().addEventListener("change", (event) => {
     const e = event.target as Element;
 
     // 計算因子が変更された場合
@@ -23,7 +23,7 @@ import { Formula, FormulaOption, Property } from "../shared/issues";
     }
 
     // トラッカーが変更された場合
-    if (Property.tracker().select().isEqualNode(e)) {
+    if (new Property().tracker().select().isEqualNode(e)) {
       setTimeout(() => new Formula(option).execute(), 700);
     }
   });

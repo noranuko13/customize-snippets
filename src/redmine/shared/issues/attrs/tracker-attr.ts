@@ -1,13 +1,11 @@
-import { Attr } from "./attr";
+export class TrackerAttr {
+  private readonly _p: HTMLParagraphElement;
 
-export class TrackerAttr implements Attr {
-  readonly p: HTMLParagraphElement;
-
-  constructor(p: HTMLParagraphElement) {
-    this.p = p;
+  constructor(div: HTMLDivElement) {
+    this._p = div.querySelector<HTMLParagraphElement>("p:has(> #issue_tracker_id)")!;
   }
 
   select(): HTMLSelectElement {
-    return this.p.querySelector<HTMLSelectElement>("select")!;
+    return this._p.querySelector<HTMLSelectElement>("select")!;
   }
 }

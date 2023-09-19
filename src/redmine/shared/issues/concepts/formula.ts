@@ -10,7 +10,7 @@ export class Formula {
 
   constructor(option: FormulaOption) {
     this.option = option;
-    this.intAttrs = Property.intCustomFields();
+    this.intAttrs = new Property().intCustomFields();
     this.decorate();
     this.normalize();
   }
@@ -18,7 +18,7 @@ export class Formula {
   execute() {
     const numbers = this.factors().map((factor) => Number(factor.input().value));
     this.result().input().value = this.option.calc(numbers).toString();
-    flashBg(this.targets().map((target) => target.p));
+    flashBg(this.targets().map((target) => target.p()));
   }
 
   factors(): IntAttr[] {
@@ -45,7 +45,7 @@ export class Formula {
   private decorate() {
     // 対象属性に装飾用クラスを付与
     this.targets().forEach((target) => {
-      target.p.classList.add(`cs-${this.option.key}-target`);
+      target.p().classList.add(`cs-${this.option.key}-target`);
     });
     // 計算結果を非活性化
     this.result().input().readOnly = true;

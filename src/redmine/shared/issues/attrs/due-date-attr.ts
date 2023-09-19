@@ -1,13 +1,15 @@
-import { Attr } from "./attr";
+export class DueDateAttr {
+  private readonly _p: HTMLParagraphElement;
 
-export class DueDateAttr implements Attr {
-  readonly p: HTMLParagraphElement;
+  constructor(div: HTMLDivElement) {
+    this._p = div.querySelector<HTMLParagraphElement>("p:has(> #issue_due_date)")!;
+  }
 
-  constructor(p: HTMLParagraphElement) {
-    this.p = p;
+  p(): HTMLParagraphElement {
+    return this._p;
   }
 
   input(): HTMLInputElement {
-    return this.p.querySelector<HTMLInputElement>("input")!;
+    return this._p.querySelector<HTMLInputElement>("input")!;
   }
 }

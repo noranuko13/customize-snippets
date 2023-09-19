@@ -1,22 +1,26 @@
 import { DueDateAttr, IntAttr, TrackerAttr } from "./attrs";
 
 export class Property {
-  static boxInner() {
-    return document.querySelector<HTMLDivElement>("div#all_attributes")!;
+  private readonly _div: HTMLDivElement;
+
+  constructor() {
+    this._div = document.querySelector<HTMLDivElement>("div#all_attributes")!;
   }
 
-  static tracker(): TrackerAttr {
-    const p = this.boxInner().querySelector<HTMLParagraphElement>("p:has(#issue_tracker_id)");
-    return new TrackerAttr(p!);
+  div(): HTMLDivElement {
+    return this._div;
   }
 
-  static dueDate(): DueDateAttr {
-    const p = this.boxInner().querySelector<HTMLParagraphElement>("p:has(#issue_due_date)");
-    return new DueDateAttr(p!);
+  tracker(): TrackerAttr {
+    return new TrackerAttr(this._div);
   }
 
-  static intCustomFields(): IntAttr[] {
-    const ps = this.boxInner().querySelectorAll<HTMLParagraphElement>("p:has(.int_cf)");
+  dueDate(): DueDateAttr {
+    return new DueDateAttr(this._div);
+  }
+
+  intCustomFields(): IntAttr[] {
+    const ps = this._div.querySelectorAll<HTMLParagraphElement>("p:has(> .int_cf)");
     return Array.from(ps).map((customField) => new IntAttr(customField));
   }
 }
