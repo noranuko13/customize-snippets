@@ -1,4 +1,4 @@
-export const animate = (elements: Element[]) => {
+export const flashBg = (elements: Element[]) => {
   elements.forEach((element) => {
     element.animate(
       {

@@ -1,4 +1,5 @@
-import { animate } from "../animates";
+import { flashBg } from "../animates";
+import { sanitizeWithOne } from "../sanitizers";
 import { IntAttr } from "./attrs";
 import { FormulaOption } from "./formula-option";
 import { Property } from "./property";
@@ -17,7 +18,7 @@ export class Formula {
   execute() {
     const numbers = this.factors().map((factor) => Number(factor.input().value));
     this.result().input().value = this.option.calc(numbers).toString();
-    animate(this.targets().map((target) => target.p));
+    flashBg(this.targets().map((target) => target.p));
   }
 
   factors(): IntAttr[] {
@@ -52,10 +53,7 @@ export class Formula {
   }
 
   private normalize() {
-    this.factors().map((cause) => {
-      if (!/^-?([1-9]\d*|0)$/.test(cause.input().value)) {
-        cause.input().value = "0";
-      }
-    });
+    const inputs = this.factors().map((cause) => cause.input());
+    sanitizeWithOne(inputs);
   }
 }

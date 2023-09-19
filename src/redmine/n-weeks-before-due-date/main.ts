@@ -1,4 +1,4 @@
-import { animate } from "../shared/animates";
+import { flashBg } from "../shared/animates";
 import { Property } from "../shared/issues";
 import { ScriptQuery } from "./script-query";
 
@@ -22,7 +22,7 @@ import { ScriptQuery } from "./script-query";
 
     div.textContent = `${query.text()}: ${dueDateStr()}`;
     Property.dueDate().p.append(div);
-    animate([Property.dueDate().p]);
+    flashBg([Property.dueDate().p]);
   };
 
   // 初期表示
