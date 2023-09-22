@@ -7,8 +7,9 @@ import { ScriptQuery } from "./script-query";
 {
   const query = new ScriptQuery();
   const execute = () => {
+    const property = new Property();
     const dueDateStr = () => {
-      const value = new Property().dueDate().input().value;
+      const value = property.dueDate().input().value;
       if (!isDate(value)) {
         return "-";
       }
@@ -26,18 +27,19 @@ import { ScriptQuery } from "./script-query";
     const div = document.getElementById(id) || createDiv();
 
     div.textContent = `${query.text()}: ${dueDateStr()}`;
-    new Property().dueDate().p().append(div);
-    flashBg([new Property().dueDate().p()]);
+    property.dueDate().p().append(div);
+    flashBg([property.dueDate().p()]);
   };
 
   if (isIssueShow() || isIssueNew()) {
     execute();
     new Property().div().addEventListener("change", (event) => {
       const e = event.target as Node;
-      if (new Property().dueDate().input().isEqualNode(e)) {
+      const property = new Property();
+      if (property.dueDate().input().isEqualNode(e)) {
         execute();
       }
-      if (new Property().tracker().select().isEqualNode(e)) {
+      if (property.tracker().select().isEqualNode(e)) {
         setTimeout(() => execute(), 700);
       }
     });
