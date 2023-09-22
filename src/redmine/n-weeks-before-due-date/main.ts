@@ -1,15 +1,19 @@
 import { flashBg } from "../shared/animates";
 import { Property } from "../shared/issues";
 import { isIssueNew, isIssueShow } from "../shared/routes";
+import { isDate } from "../shared/sanitizers";
 import { ScriptQuery } from "./script-query";
 
 {
   const query = new ScriptQuery();
   const execute = () => {
     const dueDateStr = () => {
-      const unixTimeDueDate = Date.parse(new Property().dueDate().input().value);
+      const value = new Property().dueDate().input().value;
+      if (!isDate(value)) {
+        return "-";
+      }
       const weekSec = 7 * 1000 * 60 * 60 * 24;
-      const dueDate = new Date(unixTimeDueDate + weekSec * query.week());
+      const dueDate = new Date(Date.parse(value) + weekSec * query.week());
       return dueDate.toLocaleDateString("sv-SE").replaceAll("-", "/");
     };
 
