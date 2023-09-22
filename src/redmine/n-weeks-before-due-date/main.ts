@@ -27,19 +27,12 @@ import { ScriptQuery } from "./script-query";
   };
 
   if (isIssueShow() || isIssueNew()) {
-    // 初期表示
     execute();
-
-    // 変更検知
     new Property().div().addEventListener("change", (event) => {
       const e = event.target as Element;
-
-      // 期日が変更された場合
       if (new Property().dueDate().input().isEqualNode(e)) {
         execute();
       }
-
-      // トラッカーが変更された場合
       if (new Property().tracker().select().isEqualNode(e)) {
         setTimeout(() => execute(), 700);
       }

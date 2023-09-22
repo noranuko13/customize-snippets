@@ -10,7 +10,6 @@ export class IntAttr {
   }
 
   name(): string {
-    // 必須・任意で構造に違いあり
     const span =
       this._p.querySelector<HTMLSpanElement>("label span.field-description") ||
       this._p.querySelector<HTMLSpanElement>("label span");
