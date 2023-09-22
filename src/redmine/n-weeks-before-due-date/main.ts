@@ -29,7 +29,7 @@ import { ScriptQuery } from "./script-query";
   if (isIssueShow() || isIssueNew()) {
     execute();
     new Property().div().addEventListener("change", (event) => {
-      const e = event.target as Element;
+      const e = event.target as Node;
       if (new Property().dueDate().input().isEqualNode(e)) {
         execute();
       }

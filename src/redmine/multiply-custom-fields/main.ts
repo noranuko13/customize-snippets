@@ -13,7 +13,7 @@ import { isIssueNew, isIssueShow } from "../shared/routes";
   if (isIssueShow() || isIssueNew()) {
     new Formula(option).execute();
     new Property().div().addEventListener("change", (event) => {
-      const e = event.target as Element;
+      const e = event.target as Node;
       const formula = new Formula(option);
       if (formula.factors().some((factor) => factor.input().isEqualNode(e))) {
         formula.execute();
