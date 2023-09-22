@@ -1,3 +1,5 @@
+import { isInteger } from "../shared/sanitizers";
+
 export class ScriptQuery {
   params: URLSearchParams;
 
@@ -8,7 +10,7 @@ export class ScriptQuery {
 
   week(): number {
     const weekStr = this.params.get("week") || "2";
-    if (!/^-?([1-9]\d*|0)$/.test(weekStr)) {
+    if (!isInteger(weekStr)) {
       console.error("指定できるのは半角数字とマイナス符号のみです");
       throw new ReferenceError();
     }
