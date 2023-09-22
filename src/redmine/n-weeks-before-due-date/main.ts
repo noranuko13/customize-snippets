@@ -1,5 +1,6 @@
 import { flashBg } from "../shared/animates";
 import { Property } from "../shared/issues";
+import { isIssueNew, isIssueShow } from "../shared/routes";
 import { ScriptQuery } from "./script-query";
 
 {
@@ -25,21 +26,23 @@ import { ScriptQuery } from "./script-query";
     flashBg([new Property().dueDate().p()]);
   };
 
-  // 初期表示
-  execute();
+  if (isIssueShow() || isIssueNew()) {
+    // 初期表示
+    execute();
 
-  // 変更検知
-  new Property().div().addEventListener("change", (event) => {
-    const e = event.target as Element;
+    // 変更検知
+    new Property().div().addEventListener("change", (event) => {
+      const e = event.target as Element;
 
-    // 期日が変更された場合
-    if (new Property().dueDate().input().isEqualNode(e)) {
-      execute();
-    }
+      // 期日が変更された場合
+      if (new Property().dueDate().input().isEqualNode(e)) {
+        execute();
+      }
 
-    // トラッカーが変更された場合
-    if (new Property().tracker().select().isEqualNode(e)) {
-      setTimeout(() => execute(), 700);
-    }
-  });
+      // トラッカーが変更された場合
+      if (new Property().tracker().select().isEqualNode(e)) {
+        setTimeout(() => execute(), 700);
+      }
+    });
+  }
 }
