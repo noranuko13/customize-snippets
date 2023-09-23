@@ -1,4 +1,4 @@
-# redmine/n-weeks-before-due-date
+## redmine/n-weeks-before-due-date
 
 - 期日からN週間前を逆算する。
 

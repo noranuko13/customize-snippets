@@ -1,4 +1,4 @@
-# common/hello-world
+## common/hello-world
 
 ![Image](https://noranuko13.github.io/customize-snippets/common/hello-world/image.png)
 

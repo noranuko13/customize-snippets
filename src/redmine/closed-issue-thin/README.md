@@ -1,4 +1,4 @@
-# redmine/closed-issue-thin
+## redmine/closed-issue-thin
 
 - 終了したチケットの存在感をなくす。
 

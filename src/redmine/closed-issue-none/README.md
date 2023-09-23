@@ -1,4 +1,4 @@
-# redmine/closed-issue-none
+## redmine/closed-issue-none
 
 - 終了したチケットを非表示にする。
 
