@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/browser-sync": "^2.27.1",
     "@types/browserify": "^12.0.38",
     "@types/glob": "^8.1.0",
     "@types/gulp": "^4.0.13",
@@ -22,6 +23,7 @@
     "@types/vinyl-buffer": "^1.0.1",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
+    "browser-sync": "^2.29.3",
     "browserify": "^17.0.0",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",

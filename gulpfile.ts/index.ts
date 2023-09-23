@@ -1,3 +1,4 @@
+import browserSync from "browser-sync";
 import gulp from "gulp";
 import { distLog as log } from "./logs";
 import { Md2htmlTask } from "./tasks/md2html-task";
@@ -14,8 +15,16 @@ gulp.task("build", (cb) => {
 });
 
 gulp.task("watch", () => {
+  browserSync.init({
+    server: {
+      baseDir: "./dist",
+    },
+  });
   tasks.forEach((task) => {
     gulp.watch(task.WATCH_TARGET).on("change", (globs) => task.convert(globs));
   });
-  gulp.watch("dist/**/*").on("change", (globs) => log(globs));
+  gulp.watch("dist/**/*").on("change", (globs) => {
+    log(globs);
+    browserSync.reload();
+  });
 });
