@@ -14,7 +14,7 @@ gulp.task("build", (cb) => {
   cb();
 });
 
-gulp.task("watch", () => {
+gulp.task("watch", (cb) => {
   browserSync.init({
     server: {
       baseDir: "./dist",
@@ -28,4 +28,5 @@ gulp.task("watch", () => {
     log(globs);
     browserSync.reload();
   });
+  cb();
 });
