@@ -19,6 +19,7 @@ gulp.task("watch", () => {
     server: {
       baseDir: "./dist",
     },
+    port: 8080,
   });
   tasks.forEach((task) => {
     gulp.watch(task.WATCH_TARGET).on("change", (globs) => task.convert(globs));

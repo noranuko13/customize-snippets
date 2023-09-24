@@ -3,7 +3,7 @@
   "name": "customize-snippets",
   "version": "1.0.0",
   "scripts": {
-    "watch": "gulp watch",
+    "watch": "gulp watch --dev",
     "lint": "eslint **/*.ts && stylelint **/*.scss && prettier . --check",
     "lint:fix": "eslint **/*.ts --fix && stylelint **/*.scss --fix && prettier . --write",
     "build": "gulp build"
@@ -37,10 +37,12 @@
     "gulp-jsbeautifier": "^3.0.1",
     "gulp-remarkable": "^2.1.0",
     "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0",
     "gulp-swig": "^0.9.1",
     "gulp-tap": "^2.0.0",
     "gulp-uglify": "^3.0.2",
+    "minimist": "^1.2.8",
     "prettier": "^3.0.3",
     "prettier-plugin-organize-imports": "^3.2.3",
     "sass": "^1.67.0",
