@@ -3,10 +3,10 @@
   "name": "customize-snippets",
   "version": "1.0.0",
   "scripts": {
-    "watch": "gulp watch --dev",
+    "watch": "rimraf dist && gulp build --dev && gulp watch --dev",
     "lint": "eslint **/*.ts && stylelint **/*.scss && prettier . --check",
     "lint:fix": "eslint **/*.ts --fix && stylelint **/*.scss --fix && prettier . --write",
-    "build": "gulp build"
+    "build": "rimraf dist && gulp build"
   },
   "license": "MIT",
   "devDependencies": {
@@ -45,6 +45,7 @@
     "minimist": "^1.2.8",
     "prettier": "^3.0.3",
     "prettier-plugin-organize-imports": "^3.2.3",
+    "rimraf": "^5.0.1",
     "sass": "^1.67.0",
     "stylelint": "^15.10.3",
     "stylelint-config-standard": "^34.0.0",
