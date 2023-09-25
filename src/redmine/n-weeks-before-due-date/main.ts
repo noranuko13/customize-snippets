@@ -39,7 +39,7 @@ import { ScriptQuery } from "./script-query";
       if (property.dueDate().input().isEqualNode(e)) {
         execute();
       }
-      if (property.tracker().select().isEqualNode(e)) {
+      if (property.tracker().select().isEqualNode(e) || property.status().select().isEqualNode(e)) {
         setTimeout(() => execute(), 700);
       }
     });

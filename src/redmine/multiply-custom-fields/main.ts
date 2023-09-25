@@ -18,7 +18,8 @@ import { isIssueNew, isIssueShow } from "../shared/routes";
       if (formula.factors().some((factor) => factor.input().isEqualNode(e))) {
         formula.execute();
       }
-      if (new Property().tracker().select().isEqualNode(e)) {
+      const property = new Property();
+      if (property.tracker().select().isEqualNode(e) || property.status().select().isEqualNode(e)) {
         setTimeout(() => new Formula(option).execute(), 700);
       }
     });

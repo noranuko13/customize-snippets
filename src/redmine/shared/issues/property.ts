@@ -1,4 +1,4 @@
-import { DueDateAttr, IntAttr, TrackerAttr } from "./attrs";
+import { DueDateAttr, IntAttr, StatusAttr, TrackerAttr } from "./attrs";
 
 export class Property {
   private readonly _div: HTMLDivElement;
@@ -13,6 +13,10 @@ export class Property {
 
   tracker(): TrackerAttr {
     return new TrackerAttr(this._div);
+  }
+
+  status() {
+    return new StatusAttr(this._div);
   }
 
   dueDate(): DueDateAttr {
