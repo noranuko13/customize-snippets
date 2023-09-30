@@ -31,6 +31,10 @@ export class Formula {
   private result(): IntAttr {
     const re = new RegExp(`［${this.option.nameKey}］$`);
     const intAttrs = this.intAttrs.filter((intAttr) => re.test(intAttr.name()));
+    if (intAttrs.length === 0) {
+      console.error(`［${this.option.nameKey}］が設定されていません`, intAttrs);
+      throw new ReferenceError();
+    }
     if (intAttrs.length !== 1) {
       console.error(`［${this.option.nameKey}］が複数設定されています`, intAttrs);
       throw new ReferenceError();
