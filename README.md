@@ -10,9 +10,6 @@
 
 
 ## Links
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-- [gulp.js](https://gulpjs.com/)
-- [ESLint](https://eslint.org/)
 - Chrome ウェブストア
   - [ScriptAutoRunner](https://chrome.google.com/webstore/detail/scriptautorunner/gpgjofmpmjjopcogjgdldidobhmjmdbm/related?hl=ja)
   - [Stylus - Chrome ウェブストア](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
