@@ -1,4 +1,6 @@
-export class DueDateAttr {
+import { IAttr } from "./i-attr";
+
+export class DueDateAttr implements IAttr {
   private readonly _p: HTMLParagraphElement;
 
   constructor(div: HTMLDivElement) {

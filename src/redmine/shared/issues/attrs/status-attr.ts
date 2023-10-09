@@ -1,4 +1,6 @@
-export class StatusAttr {
+import { IAttr } from "./i-attr";
+
+export class StatusAttr implements IAttr {
   private readonly _p: HTMLParagraphElement;
 
   constructor(div: HTMLDivElement) {

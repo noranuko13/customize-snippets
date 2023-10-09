@@ -1,4 +1,6 @@
-export class IntAttr {
+import { IAttr } from "./i-attr";
+
+export class IntAttr implements IAttr {
   private readonly _p: HTMLParagraphElement;
 
   constructor(p: HTMLParagraphElement) {

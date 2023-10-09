@@ -1,4 +1,6 @@
-export class TrackerAttr {
+import { IAttr } from "./i-attr";
+
+export class TrackerAttr implements IAttr {
   private readonly _p: HTMLParagraphElement;
 
   constructor(div: HTMLDivElement) {
