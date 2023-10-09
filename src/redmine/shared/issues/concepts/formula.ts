@@ -1,4 +1,5 @@
 import { flashBg } from "../../animates";
+import { WarnNoTargetError } from "../../errors";
 import { sanitizeWithOne } from "../../sanitizers";
 import { IntAttr } from "../attrs";
 import { Property } from "../property";
@@ -32,12 +33,10 @@ export class Formula {
     const re = new RegExp(`［${this.option.nameKey}］$`);
     const intAttrs = this.intAttrs.filter((intAttr) => re.test(intAttr.name()));
     if (intAttrs.length === 0) {
-      console.error(`［${this.option.nameKey}］が設定されていません`, intAttrs);
-      throw new ReferenceError();
+      throw new WarnNoTargetError(`［${this.option.nameKey}］が設定されていません`, intAttrs);
     }
     if (intAttrs.length !== 1) {
-      console.error(`［${this.option.nameKey}］が複数設定されています`, intAttrs);
-      throw new ReferenceError();
+      throw new WarnNoTargetError(`［${this.option.nameKey}］が複数設定されています`, intAttrs);
     }
     return intAttrs[0];
   }

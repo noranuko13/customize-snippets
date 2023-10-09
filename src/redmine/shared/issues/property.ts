@@ -1,10 +1,15 @@
+import { WarnNoTargetError } from "../errors";
 import { DueDateAttr, IntAttr, StatusAttr, TrackerAttr } from "./attrs";
 
 export class Property {
   private readonly _div: HTMLDivElement;
 
   constructor() {
-    this._div = document.querySelector<HTMLDivElement>("div#all_attributes")!;
+    const div = document.querySelector<HTMLDivElement>("div#all_attributes");
+    if (!div) {
+      throw new WarnNoTargetError("チケットの編集画面ではありません", document);
+    }
+    this._div = div;
   }
 
   div(): HTMLDivElement {
