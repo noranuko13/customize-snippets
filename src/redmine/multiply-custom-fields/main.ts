@@ -1,4 +1,5 @@
 import { Formula, FormulaOption, Property } from "../shared/issues";
+import { handler, wait } from "../shared/processes";
 import { isIssueNew, isIssueShow } from "../shared/routes";
 
 {
@@ -11,17 +12,25 @@ import { isIssueNew, isIssueShow } from "../shared/routes";
   };
 
   if (isIssueShow() || isIssueNew()) {
-    new Formula(option).execute();
-    new Property().div().addEventListener("change", (event) => {
-      const e = event.target as Element;
-      const formula = new Formula(option);
-      if (formula.factors().some((factor) => factor.input().id === e.id)) {
-        formula.execute();
-      }
-      const property = new Property();
-      if (property.tracker().select().id === e.id || property.status().select().id === e.id) {
-        setTimeout(() => new Formula(option).execute(), 700);
-      }
+    window.addEventListener("load", () => {
+      handler(() => {
+        new Formula(option).execute();
+      });
+    });
+    new Property().div().addEventListener("change", async (event) => {
+      await wait(400);
+      handler(() => {
+        const e = event.target as Element;
+        const property = new Property();
+        const formula = new Formula(option);
+        if (
+          formula.factors().some((factor) => factor.input().id === e.id) ||
+          property.tracker().select().id === e.id ||
+          property.status().select().id === e.id
+        ) {
+          formula.execute();
+        }
+      });
     });
   }
 }

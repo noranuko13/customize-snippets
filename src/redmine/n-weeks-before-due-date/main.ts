@@ -1,5 +1,6 @@
 import { flashBg } from "../shared/animates";
 import { Property } from "../shared/issues";
+import { handler, wait } from "../shared/processes";
 import { isIssueNew, isIssueShow } from "../shared/routes";
 import { isDate } from "../shared/sanitizers";
 import { ScriptQuery } from "./script-query";
@@ -32,16 +33,24 @@ import { ScriptQuery } from "./script-query";
   };
 
   if (isIssueShow() || isIssueNew()) {
-    execute();
-    new Property().div().addEventListener("change", (event) => {
-      const e = event.target as Element;
-      const property = new Property();
-      if (property.dueDate().input().id === e.id) {
+    window.addEventListener("load", () => {
+      handler(() => {
         execute();
-      }
-      if (property.tracker().select().id === e.id || property.status().select().id === e.id) {
-        setTimeout(() => execute(), 700);
-      }
+      });
+    });
+    new Property().div().addEventListener("change", async (event) => {
+      await wait(400);
+      handler(() => {
+        const e = event.target as Element;
+        const property = new Property();
+        if (
+          property.dueDate().input().id === e.id ||
+          property.tracker().select().id === e.id ||
+          property.status().select().id === e.id
+        ) {
+          execute();
+        }
+      });
     });
   }
 }
