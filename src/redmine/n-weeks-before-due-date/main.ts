@@ -34,12 +34,12 @@ import { ScriptQuery } from "./script-query";
   if (isIssueShow() || isIssueNew()) {
     execute();
     new Property().div().addEventListener("change", (event) => {
-      const e = event.target as Node;
+      const e = event.target as Element;
       const property = new Property();
-      if (property.dueDate().input().isEqualNode(e)) {
+      if (property.dueDate().input().id === e.id) {
         execute();
       }
-      if (property.tracker().select().isEqualNode(e) || property.status().select().isEqualNode(e)) {
+      if (property.tracker().select().id === e.id || property.status().select().id === e.id) {
         setTimeout(() => execute(), 700);
       }
     });

@@ -13,13 +13,13 @@ import { isIssueNew, isIssueShow } from "../shared/routes";
   if (isIssueShow() || isIssueNew()) {
     new Formula(option).execute();
     new Property().div().addEventListener("change", (event) => {
-      const e = event.target as Node;
+      const e = event.target as Element;
       const formula = new Formula(option);
-      if (formula.factors().some((factor) => factor.input().isEqualNode(e))) {
+      if (formula.factors().some((factor) => factor.input().id === e.id)) {
         formula.execute();
       }
       const property = new Property();
-      if (property.tracker().select().isEqualNode(e) || property.status().select().isEqualNode(e)) {
+      if (property.tracker().select().id === e.id || property.status().select().id === e.id) {
         setTimeout(() => new Formula(option).execute(), 700);
       }
     });
