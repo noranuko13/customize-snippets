@@ -39,7 +39,7 @@ import { ScriptQuery } from "./script-query";
       });
     });
     new Property().div().addEventListener("change", async (event) => {
-      await wait(400);
+      await wait(700);
       handler(() => {
         const e = event.target as Element;
         const property = new Property();
