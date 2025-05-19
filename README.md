@@ -1,5 +1,8 @@
 # customize-snippets
 
+> [!WARNING]
+> This repository is archived. No further updates will be made.
+
 
 ## How to Use
 - JavaScriptとCSSが対象のページで読み込まれるようにします。
@@ -11,7 +14,7 @@
 
 ## Links
 - Chrome ウェブストア
-  - [ScriptAutoRunner](https://chrome.google.com/webstore/detail/scriptautorunner/gpgjofmpmjjopcogjgdldidobhmjmdbm/related?hl=ja)
+  - [ScriptAutoRunner](https://chrome.google.com/webstore/detail/scriptautorunner/gpgjofmpmjjopcogjgdldidobhmjmdbm/related?hl=ja) ※サポート終了
   - [Stylus - Chrome ウェブストア](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
 - [Backlog](https://backlog.com/ja/)
 - [Redmine](https://www.redmine.org/)
